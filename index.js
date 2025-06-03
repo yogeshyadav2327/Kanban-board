@@ -84,19 +84,21 @@ document.addEventListener('click',()=>{
 
 //_____________edittask______________________//
 
-function editTask(){
-if(rightclickcard !==null){
-  
-        const newtask=prompt("Edit task", rightclickcard.textContent);
-      
-    if(newtask!==null)
-    {
-        rightclickcard.textContent=newtask;
-          const taskdate= new Date().toLocaleString();
-          rightclickcard.querySelector('small.time').textContent=taskdate;
-          console.log(small.time);
-    }
-}
+
+function editTask() {
+    if (rightclickcard != null) {
+        const parts = rightclickcard.innerText.split('\n');
+        const oldTask = parts[0];
+        const newtask = prompt("Edit task", oldTask);
+
+        if (newtask != null) {
+            const currentDateTime = new Date().toLocaleString('en-US', {
+                dateStyle: 'short',
+                timeStyle:'medium'
+            });
+            rightclickcard.innerHTML = `${newtask}<br>${currentDateTime}`;
+   }
+   }
 }
 
 //___________________deletetask___________________________//

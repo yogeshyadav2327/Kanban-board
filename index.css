@@ -84,10 +84,10 @@ li{
     color: #333;
 }
 .time{
-    text-align: end;
+    text-align: start;
     display: block;
-    font-style: italic;
+    font-style: medium;
     color: black;
-    font-size: 12px;
+    font-size: 15px;
    
 }
